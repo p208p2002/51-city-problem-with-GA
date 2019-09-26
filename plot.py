@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import random
 from core import *
 
-def showPlot(PATH_SEQ):
+def showPlot(PATH_SEQ,title):
     # load
     DIC = loadDic()
     with open('./eil51.txt','r') as f:
@@ -22,7 +22,6 @@ def showPlot(PATH_SEQ):
     myX = []
     myY = []
     myPath = PATH_SEQ
-    print(myPath)
     for i in myPath:
         _x,_y = DIC[i]
         myX.append(_x)
@@ -31,7 +30,6 @@ def showPlot(PATH_SEQ):
     # matplotlib.rcParams['axes.unicode_minus'] = False
     fig, ax = plt.subplots()
     ax.plot(x, y, 'o')
-    ax.set_title('Travel Path')
+    ax.set_title(title)
     plt.plot(myX,myY)
-    print(myX,myY)
     plt.show()

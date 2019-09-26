@@ -4,7 +4,7 @@ import random
 from collections import Counter
 import copy
 #initial   
-num_cities =51
+NUM_CITIES =51
 DIC = loadDic()
 ITER_NUM = 2500
 INITIAL_POPULATION_NUM = 10
@@ -16,7 +16,7 @@ if __name__ == '__main__':
     chromosomes = []
 
     for i in range(INITIAL_POPULATION_NUM):
-        chromosomes.append(init(num_cities))
+        chromosomes.append(init(NUM_CITIES))
         c = chromosomes[i]
         print("chromosomes"+str(i),c)
         print("value:",evalu(c,DIC))
@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
     for NOW_ITER in range(ITER_NUM):
         parentsChromosomes = copy.deepcopy(chromosomes)        
-        splitPointStart = random.randint(0,num_cities - CROSSOVER_LEN)
+        splitPointStart = random.randint(0,NUM_CITIES - CROSSOVER_LEN)
         splitPointEnd = splitPointStart + CROSSOVER_LEN
         # print("Round:"+str(NOW_ITER))
         
@@ -46,8 +46,8 @@ if __name__ == '__main__':
             c1d = dict(Counter(c1))
             c2d = dict(Counter(c2))
             
-            c1r = findRepeat(c1d,num_cities)
-            c2r = findRepeat(c2d,num_cities)
+            c1r = findRepeat(c1d,NUM_CITIES)
+            c2r = findRepeat(c2d,NUM_CITIES)
             
             c1rb = returnBack(c1r,c1)
             c2rb = returnBack(c2r,c2)
@@ -84,5 +84,5 @@ if __name__ == '__main__':
     print()
     print("FINAL PATH:\n",chromosomes[0])
     print("FINAL VAL:\n",evalu(chromosomes[0],DIC))
-    showPlot(childChromosomes[0])
+    showPlot(chromosomes[0],'Travel Path')
         
