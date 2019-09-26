@@ -1,4 +1,5 @@
 from core import *
+from plot import *
 import random
 from collections import Counter
 import copy
@@ -83,4 +84,5 @@ if __name__ == '__main__':
     print()
     print("FINAL PATH:\n",chromosomes[0])
     print("FINAL VAL:\n",evalu(chromosomes[0],DIC))
+    showPlot(childChromosomes[0])
         
