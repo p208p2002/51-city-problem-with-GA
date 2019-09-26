@@ -6,7 +6,7 @@ import random
 
 # For GA
 def mutation(c,rate_level):
-    doMutation = random.randint(1,10)
+    doMutation = random.randint(1,100)
     if(doMutation<= rate_level):
         c = c.copy()
         sw1 = random.randint(1,len(c)) - 1
