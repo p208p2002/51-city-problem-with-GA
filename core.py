@@ -5,6 +5,19 @@ import math
 import random
 
 # For GA
+def mutation(c,rate_level):
+    doMutation = random.randint(1,10)
+    if(doMutation<= rate_level):
+        c = c.copy()
+        sw1 = random.randint(1,len(c)) - 1
+        sw2 = random.randint(1,len(c)) - 1
+        c1 = c[sw1]
+        c2 = c[sw2]
+        c[sw1] = c2
+        c[sw2] = c1
+        return c
+    return c
+
 def findRepeat(chromosome,num_cities):
     # 找到重複值
     rep = []
@@ -30,6 +43,8 @@ def returnBack(chromosome_repeat_list,chromosome):
 
 def swapBack(c1,c1rb,c2,c2rb):
     # 復位實現
+    c1 = c1.copy()
+    c2 = c2.copy()
     c1_copy = c1.copy()
     c2_copy = c2.copy()
     for i in range(len(c1rb)):
