@@ -205,7 +205,7 @@ iter_num = input('Please enter the iteration:')
 iter_num = int(iter_num)
 
 #Execute
-import pandas as pd
+# import pandas as pd
 
 
 for i in range(iter_num): # iteration iter_num =10000次看看
