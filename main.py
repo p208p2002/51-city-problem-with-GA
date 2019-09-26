@@ -7,8 +7,8 @@ import copy
 NUM_CITIES =51
 DIC = loadDic()
 ITER_NUM = 2500
-INITIAL_POPULATION_NUM = 10
-CROSSOVER_LEN = 3
+INITIAL_POPULATION_NUM = 8
+CROSSOVER_LEN = 4
 MOUTATION_LEVEL = 25 # 10(%) = 0.1
 
 if __name__ == '__main__':
